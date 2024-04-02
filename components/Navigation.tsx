@@ -7,7 +7,7 @@
             <a href="./precios" className="text-black hover:text-green-900 px-4 py-2 border-r border-black">Precios</a>
             <a href="./acerca" className="text-black hover:text-green-900 px-4 py-2 border-r border-black">Warden Tech-Secure</a>
             <a href="./contacto" className="text-black hover:text-green-900 px-4 py-2 border-r border-black">Contacto</a>
-            <a href="" className="text-black hover:text-green-900 px-4 py-2 border-r border-black">Mi Warden</a>
+            <a href="./miwarden" className="text-black hover:text-green-900 px-4 py-2 border-r border-black">Mi Warden</a>
             </nav>
         </div>
     );

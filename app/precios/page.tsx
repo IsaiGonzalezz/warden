@@ -38,6 +38,7 @@ const productos = [
 const Precios = () => {
   return (
     <div className="flex flex-col h-screen bg-gray-100">
+      <title>Precios</title>
       <header className="p-4 bg-withe shadow-md">
         <div className="container mx-auto flex justify-between items-center">
           <div className="font-bold text-xl text-black">Warden Tech-Secure</div>
