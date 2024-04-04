@@ -1,8 +1,30 @@
-import React from "react";
-import { FaFacebook, FaGoogle, FaRegEnvelope } from "react-icons/fa";
+'use client'
+import React, { useState } from "react";
+import { FaRegEnvelope } from "react-icons/fa";
 import { MdLock } from "react-icons/md";
+import app from "@/components/Firebase";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 
 const Registro = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleRegister = async (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    const auth = getAuth(app);
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await sendEmailVerification(userCredential.user);
+      alert("Se ha enviado un correo electrónico de verificación. Por favor, verifica tu correo electrónico.");
+    } catch (error) {
+      if (error instanceof Error) {
+        alert(error.message);
+      } else {
+        console.error(error);
+      }
+    }
+  };
+
   return (
     <div className="flex flex-col h-screen bg-gray-100 mb-10">
       <title>Mi Warden</title>
@@ -39,15 +61,7 @@ const Registro = () => {
                 Crear una cuenta
               </h2>
               <div className="border-2 w-10 border-blue-500 inline-block mb-2"></div>
-              <div className="flex justify-center my-2">
-                <a
-                  href="#"
-                  className="border-2 border-gray-200 rounded-full p-3 mx-1"
-                >
-                  <FaGoogle color="blue" className="text-sm" />
-                </a>
-              </div>
-              <p className="text-gray-400 my-3">O usa tu cuenta de email</p>
+              
               <div className="flex flex-col items-center">
                 <div className="bg-gray-100 w-64 p-2 flex items-center mb-3">
                   <FaRegEnvelope className="text-gray-400 m-2" />
@@ -55,6 +69,8 @@ const Registro = () => {
                     type="email"
                     placeholder="Email"
                     className="text-blue-700 bg-gray-100 outline-none text-sm flex-1"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
 
@@ -64,6 +80,8 @@ const Registro = () => {
                     type="password"
                     placeholder="Password"
                     className="text-blue-700 bg-gray-100 outline-none text-sm flex-1"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
                 <div className="bg-gray-100 w-64 p-2 flex items-center mb-3">
@@ -74,12 +92,12 @@ const Registro = () => {
                     className="text-blue-700 bg-gray-100 outline-none text-sm flex-1"
                   />
                 </div>
-                <a
-                  href="./miwarden"
+                <button
+                  onClick={handleRegister}
                   className="text-blue-700 border-2 m-6 border-blue-700 rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-700 hover:text-white"
                 >
                   Verificar Correo
-                </a>
+                </button>
               </div>
             </div>
           </div>{" "}
