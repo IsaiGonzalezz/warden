@@ -4,7 +4,7 @@ import { MdLock } from "react-icons/md";
 
 const Registro = () => {
   return (
-    <div className="flex flex-col h-screen bg-gray-100">
+    <div className="flex flex-col h-screen bg-gray-100 mb-10">
       <title>Mi Warden</title>
       <header className="p-4 bg-white shadow-md">
         <div className="container mx-auto flex justify-between items-center">
@@ -15,6 +15,7 @@ const Registro = () => {
           />
         </div>
       </header>
+      <br/>
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
         <div className="bg-white rounded-2xl shadow-2xl flex w-2/3 max-w-4xl">
           <div className="w-2/3 bg-blue-500 rounded-tl-2xl rounded-bl-2xl py-36 px-12">
@@ -39,12 +40,6 @@ const Registro = () => {
               </h2>
               <div className="border-2 w-10 border-blue-500 inline-block mb-2"></div>
               <div className="flex justify-center my-2">
-                <a
-                  href="#"
-                  className="border-2 border-gray-200 rounded-full p-3 mx-1"
-                >
-                  <FaFacebook color="blue" className="text-sm" />
-                </a>
                 <a
                   href="#"
                   className="border-2 border-gray-200 rounded-full p-3 mx-1"
@@ -79,12 +74,19 @@ const Registro = () => {
                     className="text-blue-700 bg-gray-100 outline-none text-sm flex-1"
                   />
                 </div>
+                <a
+                  href="./miwarden"
+                  className="text-blue-700 border-2 m-6 border-blue-700 rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-700 hover:text-white"
+                >
+                  Verificar Correo
+                </a>
               </div>
             </div>
           </div>{" "}
           {/* sign in section*/}
         </div>
       </main>
+      <br/>
       <br/>
       <br/>
       <br/>
