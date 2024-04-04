@@ -1,7 +1,11 @@
 import app from './Firebase';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup,sendPasswordResetEmail } from "firebase/auth";
 
 const auth = getAuth(app);
+
+export const sendResetPasswordEmail = (email: string) => {
+  return sendPasswordResetEmail(auth, email);
+};
 
 export const signInWithEmail = (email: string, password: string) => {
   return signInWithEmailAndPassword(auth, email, password);

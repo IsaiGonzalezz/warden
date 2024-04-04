@@ -1,8 +1,8 @@
 'use client'
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { FaGoogle, FaRegEnvelope } from "react-icons/fa";
 import { MdLock } from "react-icons/md";
-import { signInWithEmail, signInWithGoogle } from '@/components/Auth';
+import { signInWithEmail, signInWithGoogle,  sendResetPasswordEmail} from '@/components/Auth';
 import { getAuth, onAuthStateChanged, User } from "firebase/auth";
 
 const MiWarden = () => {
@@ -47,6 +47,20 @@ const MiWarden = () => {
         setErrorMessage(error.message); 
       });
   };
+
+  const handlePasswordReset = () => {
+    sendResetPasswordEmail(email)
+      .then(() => {
+        // Correo electrónico de restablecimiento de contraseña enviado
+        alert("Se ha enviado un correo electrónico de restablecimiento de contraseña. Por favor, revisa tu correo electrónico.");
+      })
+      .catch((error) => {
+        // Error al enviar el correo electrónico de restablecimiento de contraseña
+        setErrorMessage(error.message);
+      });
+  };
+
+  
 
   return (
     <div className="flex flex-col h-screen bg-gray-100">
@@ -108,6 +122,7 @@ const MiWarden = () => {
                 <a
                   href="#"
                   className="text-green-400 underline text-sm mb-3"
+                  onClick={handlePasswordReset}
                 >
                   Forgot Password?
                 </a>
@@ -145,4 +160,4 @@ const MiWarden = () => {
   );
 };
 
-export default MiWarden; 
+export default MiWarden;
