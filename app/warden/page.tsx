@@ -2,6 +2,8 @@
 import React from "react";
 import { getAuth, signOut } from "firebase/auth";
 import app from "@/components/Firebase";
+import SensorChart from "@/components/SensorChart";
+
 
 const Warden = () => {
   const handleSignOut = (event: React.MouseEvent) => {
@@ -40,7 +42,11 @@ const Warden = () => {
             Cerrar sesión
           </a>
         </div>
+        <SensorChart /> {/* Aquí se añade el componente SensorChart */}
+        <br/>
+        <br/>
       </main>
+      <br/>
     </div>
   );
 };
