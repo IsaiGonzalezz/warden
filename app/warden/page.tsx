@@ -30,15 +30,16 @@ const Warden = () => {
           />
         </div>
       </header>
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <a
+      <main className="w-full flex-1 px-20 text-center">
+        <div className="w-full text-right p-4 ml-20">
+          <a
             href="#"
-            className="text-green-400 border-2 border-green-400 rounded-full m-4 mb-0 px-12 py-2 inline-block font-semibold hover:bg-green-400 hover:text-white"
+            className="text-white border-2 border-green-400 bg-green-400 rounded-full m-0 mb-10 px-12 py-2 inline-block font-semibold hover:bg-white hover:text-green-400"
             onClick={handleSignOut}
           >
             Cerrar sesión
           </a>
-        
+        </div>
       </main>
     </div>
   );

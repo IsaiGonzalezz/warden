@@ -44,7 +44,11 @@ const Productos = () => {
       <title>Productos</title>
       <header className="p-4 bg-withe shadow-md">
         <div className="container mx-auto flex justify-between items-center">
-          <div className="font-bold text-xl text-black">Warden Tech-Secure</div>
+        <img
+            src="/img/banner.png"
+            alt="Warden Tech-Secure"
+            className="w-48"
+          />
         </div>
       </header>
 
