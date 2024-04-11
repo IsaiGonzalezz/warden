@@ -1,5 +1,6 @@
 import app from './Firebase';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup,sendPasswordResetEmail } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, 
+  GoogleAuthProvider, signInWithPopup,sendPasswordResetEmail } from "firebase/auth";
 
 const auth = getAuth(app);
 

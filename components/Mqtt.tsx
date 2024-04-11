@@ -1,6 +1,6 @@
 import mqtt, { IClientPublishOptions } from 'mqtt';
 
-const options  = {
+const options  = { 
     username: 'Raspberry-GOD',
     password: '3541587873'
 }
@@ -24,9 +24,7 @@ client.on('connect', () => {
     }
   });   
 });
-
 // Escucha de mensajes del broker
 client.on('message', (topic: string, message: Buffer, packet: mqtt.Packet) => {
   console.log(`Mensaje recibido en ${topic}: ${message.toString()}`);
 });
-188

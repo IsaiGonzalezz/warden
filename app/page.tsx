@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const bannerItem = {
-  title: "Seguridad Confiable",
+  title: "Warden Tech-Secure",
   subtitle: "Protección las 24 horas",
   image:
     "https://cdn.pixabay.com/photo/2017/05/24/06/04/abstract-2339604_960_720.jpg",
@@ -35,7 +36,7 @@ const cardItems = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-screen bg-gray-100">
+    <div className="flex flex-col min-h-screen bg-gray-100">
       <title>Inicio</title>
       <header className="p-4 bg-white shadow-md">
         <div className="container mx-auto flex justify-between items-center">
@@ -60,7 +61,7 @@ export default function Home() {
         </div>
         <br />
         <div className="text-center py-4">
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-2xl font-bold text-black">
             Elige la mejor opcion para ti
           </h2>
         </div>
@@ -84,6 +85,66 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+        <div className="container mx-auto px-4 mt-20 flex flex-col md:flex-row">
+          <div className="md:w-7/12 mt-5">
+            <p className="text-sm text-black mb-2">
+              Experiencia y Tecnología en
+            </p>
+            <h2 className="font-bold text-2xl mb-7 text-black">
+              SOLUCIONES PARA TU SEGURIDAD
+            </h2>
+            <div className="w-16 h-1 bg-green-500 mb-7"></div>
+            <p className="mb-4 text-black">
+              Nuestro equipo de expertos en seguridad analiza las necesidades de
+              los clientes, evalúa los riesgos y ofrece soluciones adaptadas.
+              Además, gestionamos los sistemas de forma remota de manera
+              sencilla
+            </p>
+            <a
+              href="./contacto"
+              className="inline-block px-6 py-3 text-sm text-black bg-green-500 rounded"
+            >
+              Más información
+            </a>
+          </div>
+          <div className="md:w-4/10 md:ml-8 mt-10 md:mt-15">
+            <h2 className="font-normal text-xl mb-7 text-black">
+              ¿Porqué Warden es tu decisión más inteligente?
+            </h2>
+            <div className="w-16 h-1 bg-green-500 mb-7"></div>
+            <ul className="list-disc ml-5 text-black">
+              <li>Servicio de Alta Calidad</li>
+              <li>Tecnología Integral, Escalable y de Fácil Uso.</li>
+              <li>Precios Justos.</li>
+              <li>Experiencia en instalaciones de seguridad.</li>
+              <li>Soluciones integrales según tus necesidades</li>
+              <li>Asesoría y atención personalizada</li>
+              <li>Soluciones Confiables y funcionales.</li>
+              <li>Servicio Postventa</li>
+            </ul>
+          </div>
+        </div>
+        <div className="relative mt-20">
+          <img
+            src="https://grandesmedios.com/wp-content/uploads/2021/12/La-importancia-de-la-instalacion-de-camaras-de-seguridad.jpg"
+            alt="Banner"
+            className="w-full h-screen object-cover bg-black"
+          />
+          <div className="absolute inset-0 bg-black opacity-75"></div>
+          <div className="absolute inset-0 flex flex-col justify-center items-center">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Te Brindaremos una Asesoría Profesional e Instalación de calidad.
+            </h2>
+            <p className="text-lg text-white mb-9">
+              Diseñamos soluciones de seguridad a la medida de tus necesidades
+            </p>
+            <Link href="/contacto">
+              <button className="text-white border-2 m-6 bg-blue-700 border-blue-700 rounded-full px-12 py-2 inline-block font-semibold hover:bg-white hover:text-blue-700">
+                Contactanos
+              </button>
+            </Link>
           </div>
         </div>
       </main>
